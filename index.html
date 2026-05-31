@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mindora AI Ustoz</title>
+  <meta name="description" content="Mindora AI Ustoz - o'quvchilar uchun shaxsiy ta'lim platformasi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="landing" class="landing">
+    <nav class="landing-nav" aria-label="Asosiy">
+      <div class="auth-actions">
+        <button class="ghost-btn" type="button" data-open-auth="login">Kirish</button>
+        <button class="primary-btn" type="button" data-open-auth="register">Ro'yxatdan o'tish</button>
+      </div>
+    </nav>
+
+    <section class="hero landing-home">
+      <div class="hero-copy">
+        <p class="eyebrow">Mindora AI Ustoz</p>
+        <h1>O'qish, test va yutuqlar bir joyda.</h1>
+        <p>Fanlar bo'yicha darslar, testlar, xotira mashqlari, statistika va AI yordamchi bilan shaxsiy o'quv rejangizni boshqaring.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" type="button" data-open-auth="register">Boshlash</button>
+          <button class="ghost-btn" type="button" data-open-auth="login">Hisobga kirish</button>
+        </div>
+      </div>
+      <div class="hero-device" aria-hidden="true">
+        <img src="bosh rasm.png" alt="" />
+      </div>
+    </section>
+
+    <section class="landing-stats landing-home" aria-label="Platforma statistikasi">
+      <article>
+        <strong data-landing-stat="users">0</strong>
+        <span>Foydalanuvchi</span>
+      </article>
+      <article>
+        <strong data-landing-stat="subjects">0</strong>
+        <span>Fanlar</span>
+      </article>
+      <article>
+        <strong data-landing-stat="tests">0</strong>
+        <span>Testlar</span>
+      </article>
+      <article>
+        <strong data-landing-stat="ai">Faol</strong>
+        <span>AI Ustoz</span>
+      </article>
+    </section>
+  </main>
+
+  <main id="app" class="app hidden">
+    <aside class="sidebar">
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-label="Menyuni ochish" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <button id="mini-profile" class="mini-profile" type="button" aria-label="Mindora bosh sahifa">
+        <img class="mindora-chip-img" src="mindora.png" alt="Mindora AI Ustoz" />
+      </button>
+      <button id="mobile-profile-toggle" class="mobile-profile-link" type="button" aria-label="Profil menyusi" aria-expanded="false">
+        <span>👤</span>
+        <small>Profil</small>
+      </button>
+      <div id="mobile-account-menu" class="mobile-account-menu" aria-hidden="true"></div>
+      <nav id="app-nav" class="app-nav" aria-label="Ilova bo'limlari"></nav>
+      <button class="upgrade-btn" type="button" aria-label="Premiumga o'tish">
+        <span>👑 Premium</span>
+        <small>Pro imkoniyatlar</small>
+      </button>
+    </aside>
+
+    <section class="app-main">
+      <header class="app-topbar">
+        <div class="top-icons profile-menu-wrap">
+          <button id="profile-shortcut" class="profile-button" type="button" aria-label="Profil menyusi">
+            <img class="mindora-chip-img" src="mindora.png" alt="Mindora AI Ustoz" />
+          </button>
+          <div id="profile-menu" class="profile-menu" aria-hidden="true"></div>
+        </div>
+      </header>
+      <div id="page-root" class="page-root"></div>
+    </section>
+  </main>
+
+  <div id="auth-modal" class="auth-modal" aria-hidden="true">
+    <section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button id="close-auth" class="close-btn" type="button" aria-label="Yopish">&times;</button>
+      <div class="auth-brand-panel">
+        <div class="auth-brand-mark">
+          <img src="logotip.png" alt="" />
+        </div>
+        <div class="auth-brand-copy">
+          <span class="auth-brand-badge">AI bilan o'qish</span>
+          <h2>Mindora <span>AI Ustoz</span></h2>
+          <p>Darslar, testlar, statistika va shaxsiy yordamchi bir platformada.</p>
+        </div>
+      </div>
+
+      <div class="auth-form-panel">
+        <div class="auth-tabs" role="tablist" aria-label="Kirish rejimi">
+          <button id="login-tab" class="active" type="button">Kirish</button>
+          <button id="register-tab" type="button">Ro'yxatdan o'tish</button>
+        </div>
+        <div class="auth-title">
+          <h2 id="auth-title">Tizimga kirish</h2>
+          <p id="auth-subtitle">Farzand va yutuqlaringizni kuzating</p>
+        </div>
+        <form id="auth-form">
+          <label id="name-row">
+            Ism
+            <input id="name-field" name="name" type="text" autocomplete="name" placeholder="Ismingiz" />
+          </label>
+          <label>
+            Email
+            <input id="email-field" name="email" type="email" autocomplete="email" placeholder="email@example.com" required />
+          </label>
+          <label>
+            Parol
+            <input id="password-field" name="password" type="password" autocomplete="current-password" placeholder="Parol kiriting" minlength="4" required />
+          </label>
+          <label id="phone-row">
+            Telefon
+            <input id="phone-field" name="phone" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67" />
+          </label>
+          <label id="gender-row">
+            Jins
+            <select id="gender-field" name="gender">
+              <option value="">Tanlang</option>
+              <option value="male">O'g'il bola</option>
+              <option value="female">Qiz bola</option>
+            </select>
+          </label>
+          <button id="auth-submit" class="primary-btn full" type="submit">Kirish</button>
+          <p id="auth-switch-copy" class="hint">Hisobingiz yo'qmi? <button id="auth-switch" type="button">Ro'yxatdan o'tish</button></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
